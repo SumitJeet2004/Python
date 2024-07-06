@@ -2,7 +2,7 @@ import speech_recognition as sr
 import os
 import webbrowser
 import openai
-from config import apikey  # Ensure this is set correctly
+from config import apikey 
 import datetime
 import random
 import string
@@ -17,7 +17,7 @@ def get_random_string(length=8):
 
 # Function to speak text using Windows Text-to-Speech
 def say(text):
-    # **Change**: Handling single quotes in text by replacing them with backticks
+   
     safe_text = text.replace("'", "`")
     os.system(f'powershell -Command "Add-Type –AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak(\'{safe_text}\')"')
 
